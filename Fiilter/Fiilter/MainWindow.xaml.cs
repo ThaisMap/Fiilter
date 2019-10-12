@@ -25,6 +25,7 @@ namespace Fiilter
         {
             InitializeComponent();
             MainOne = new Principal();
+            dgFIIs.ItemsSource = MainOne.FIIs;
         }
     }
 }

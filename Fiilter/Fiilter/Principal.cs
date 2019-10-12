@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace Fiilter
 {
@@ -13,6 +14,7 @@ namespace Fiilter
 
         public Principal()
         {
+            FIIs = new List<FII>();
             scrape();
         }
 
@@ -28,8 +30,25 @@ namespace Fiilter
             {
                 foreach (var linha in LinhasResult)
                 {
+                    List<string> aux = new List<string>();
                     var dadosnumericos = linha.SelectNodes(".//td");
 
+                    if (dadosnumericos != null)
+                    {
+
+                        foreach (var dado in dadosnumericos)
+                        {
+                            aux.Add(HttpUtility.HtmlDecode(dado.InnerText));
+
+                        }
+                        try
+                        {
+                            FIIs.Add(new FII(aux));
+                        }
+                        catch (Exception)
+                        {
+                        }
+                    }
                 }
             }
         }

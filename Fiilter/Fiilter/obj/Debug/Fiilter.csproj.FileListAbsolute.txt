@@ -22,3 +22,4 @@ G:\GitHub\Fiilter\Fiilter\Fiilter\obj\Debug\Fiilter.csproj.CoreCompileInputs.cac
 G:\GitHub\Fiilter\Fiilter\Fiilter\obj\Debug\Fiilter.csproj.CopyComplete
 G:\GitHub\Fiilter\Fiilter\Fiilter\obj\Debug\Fiilter.exe
 G:\GitHub\Fiilter\Fiilter\Fiilter\obj\Debug\Fiilter.pdb
+G:\GitHub\Fiilter\Fiilter\Fiilter\obj\Debug\App.baml
