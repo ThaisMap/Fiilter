@@ -11,14 +11,15 @@ namespace Fiilter
     class Principal
     {
         public List<FII> FIIs { get; private set; }
-
+        public string[] setores { get; set; }
         public Principal()
         {
             FIIs = new List<FII>();
-            scrape();
+            Scrape();
+            GetSetores();
         }
 
-        private void scrape()
+        private void Scrape()
         {
             string page = "https://www.fundsexplorer.com.br/ranking";
 
@@ -50,6 +51,14 @@ namespace Fiilter
                         }
                     }
                 }
+            }
+        }
+
+        private void GetSetores()
+        {
+            if(FIIs.Count > 0)
+            {
+                setores = FIIs.Select(x => x.Setor).Distinct().ToArray();
             }
         }
     }

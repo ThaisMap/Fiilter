@@ -6,11 +6,87 @@
     xmlns:local="clr-namespace:Fiilter"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title="MainWindow"
+    Title="Fiilter"
     Width="800"
     Height="450"
     mc:Ignorable="d">
     <DockPanel>
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+            <TextBox
+                x:Name="tbValor"
+                Width="90"
+                Margin="10"
+                materialDesign:HintAssist.Hint="Valor máximo"
+                materialDesign:HintAssist.IsFloating="True"
+                LostFocus="LostFocus_Filtrar"
+                PreviewTextInput="ApenasNumeros"
+                Text="160" />
+            <TextBox
+                x:Name="tbLiquidez"
+                Width="90"
+                Margin="10"
+                materialDesign:HintAssist.Hint="Liquidez mínima"
+                materialDesign:HintAssist.IsFloating="True"
+                LostFocus="LostFocus_Filtrar"
+                PreviewTextInput="ApenasNumeros"
+                Text="2000" />
+            <TextBox
+                x:Name="tbDY12Media"
+                Width="90"
+                Margin="10"
+                materialDesign:HintAssist.Hint="DY 12 (med) mínimo"
+                materialDesign:HintAssist.IsFloating="True"
+                LostFocus="LostFocus_Filtrar"
+                PreviewTextInput="ApenasNumeros"
+                Text="0,5" />
+            <TextBox
+                x:Name="tbPvpa"
+                Width="90"
+                Margin="10"
+                materialDesign:HintAssist.Hint="P/VPA máximo"
+                materialDesign:HintAssist.IsFloating="True"
+                LostFocus="LostFocus_Filtrar"
+                PreviewTextInput="ApenasNumeros"
+                Text="1,1" />
+            <TextBox
+                x:Name="tbQtdeAtivos"
+                Width="90"
+                Margin="10"
+                materialDesign:HintAssist.Hint="Qt ativos minima"
+                materialDesign:HintAssist.IsFloating="True"
+                LostFocus="LostFocus_Filtrar"
+                PreviewTextInput="ApenasNumeros"
+                Text="2" />
+            <TextBox
+                x:Name="tbVacancia"
+                Width="90"
+                Margin="10"
+                materialDesign:HintAssist.Hint="Vacância máxima"
+                materialDesign:HintAssist.IsFloating="True"
+                LostFocus="LostFocus_Filtrar"
+                PreviewTextInput="ApenasNumeros"
+                Text="3" />
+        </StackPanel>
+        <ListBox
+            x:Name="listSetores"
+            Width="auto"
+            DockPanel.Dock="Top">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <CheckBox
+                        Name="CkbSetor"
+                        Checked="CkbSetor_Checked"
+                        Content="{Binding}"
+                        IsChecked="True"
+                        Unchecked="CkbSetor_Unchecked" />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
         <DataGrid x:Name="dgFIIs" DockPanel.Dock="Top" />
     </DockPanel>
 </Window>

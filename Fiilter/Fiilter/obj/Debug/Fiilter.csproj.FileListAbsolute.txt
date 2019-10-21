@@ -1,3 +1,7 @@
+G:\GitHub\Fiilter\Fiilter\Fiilter\obj\Debug\MainWindow.g.cs
+G:\GitHub\Fiilter\Fiilter\Fiilter\obj\Debug\App.g.cs
+G:\GitHub\Fiilter\Fiilter\Fiilter\obj\Debug\Fiilter_MarkupCompile.cache
+G:\GitHub\Fiilter\Fiilter\Fiilter\obj\Debug\Fiilter_MarkupCompile.lref
 G:\GitHub\Fiilter\Fiilter\Fiilter\bin\Debug\Fiilter.exe.config
 G:\GitHub\Fiilter\Fiilter\Fiilter\bin\Debug\Fiilter.exe
 G:\GitHub\Fiilter\Fiilter\Fiilter\bin\Debug\Fiilter.pdb
@@ -9,17 +13,12 @@ G:\GitHub\Fiilter\Fiilter\Fiilter\bin\Debug\HtmlAgilityPack.xml
 G:\GitHub\Fiilter\Fiilter\Fiilter\bin\Debug\MaterialDesignColors.pdb
 G:\GitHub\Fiilter\Fiilter\Fiilter\bin\Debug\MaterialDesignThemes.Wpf.pdb
 G:\GitHub\Fiilter\Fiilter\Fiilter\bin\Debug\MaterialDesignThemes.Wpf.xml
-G:\GitHub\Fiilter\Fiilter\Fiilter\obj\Debug\Fiilter.csprojAssemblyReference.cache
-G:\GitHub\Fiilter\Fiilter\Fiilter\obj\Debug\MainWindow.g.cs
-G:\GitHub\Fiilter\Fiilter\Fiilter\obj\Debug\App.g.cs
-G:\GitHub\Fiilter\Fiilter\Fiilter\obj\Debug\Fiilter_MarkupCompile.cache
-G:\GitHub\Fiilter\Fiilter\Fiilter\obj\Debug\Fiilter_MarkupCompile.lref
+G:\GitHub\Fiilter\Fiilter\Fiilter\obj\Debug\App.baml
 G:\GitHub\Fiilter\Fiilter\Fiilter\obj\Debug\MainWindow.baml
 G:\GitHub\Fiilter\Fiilter\Fiilter\obj\Debug\Fiilter.g.resources
 G:\GitHub\Fiilter\Fiilter\Fiilter\obj\Debug\Fiilter.Properties.Resources.resources
 G:\GitHub\Fiilter\Fiilter\Fiilter\obj\Debug\Fiilter.csproj.GenerateResource.cache
-G:\GitHub\Fiilter\Fiilter\Fiilter\obj\Debug\Fiilter.csproj.CoreCompileInputs.cache
 G:\GitHub\Fiilter\Fiilter\Fiilter\obj\Debug\Fiilter.csproj.CopyComplete
 G:\GitHub\Fiilter\Fiilter\Fiilter\obj\Debug\Fiilter.exe
 G:\GitHub\Fiilter\Fiilter\Fiilter\obj\Debug\Fiilter.pdb
-G:\GitHub\Fiilter\Fiilter\Fiilter\obj\Debug\App.baml
+G:\GitHub\Fiilter\Fiilter\Fiilter\obj\Debug\Fiilter.csprojAssemblyReference.cache
