@@ -54,7 +54,16 @@ namespace Fiilter
         public bool GetFilteredView(object sourceObject)
         {
             FII fundo = sourceObject as FII;
-            return (FiltroSetor(fundo) && FiltroValor(fundo) && FiltroLiquidez(fundo) && FiltroDYMedia12(fundo) && FiltroPVPA(fundo) && FiltroQtAtivos(fundo) && FiltroVacancia(fundo));
+            return (FiltroSetor(fundo) && 
+                FiltroListaNegra(fundo.Codigo) &&
+                FiltroValor(fundo) && 
+                FiltroLiquidez(fundo) && 
+                FiltroDYMedia12(fundo) && 
+                FiltroPVPA(fundo) && 
+                FiltroQtAtivos(fundo) && 
+                FiltroVacancia(fundo) &&
+                FiltroRentabilidade(fundo)
+                );
           
         }
 
@@ -133,6 +142,22 @@ namespace Fiilter
             return fundo.VacanciaFisica <= valor;
         }
 
+        private bool FiltroRentabilidade(FII fundo)
+        {
+            if (tbRentabilidade.Text == "")
+                return true;
+
+            if (!int.TryParse(tbRentabilidade.Text, out int ativos))
+                return false;
+
+            return fundo.RentabilidadeTotal >= ativos;
+        }
+
+        private bool FiltroListaNegra(string nomeFundo)
+        {
+            return !MainOne.ListaNegra.Contains(nomeFundo);
+        }
+
         private void CkbSetor_Checked(object sender, RoutedEventArgs e)
         {
             CheckBox chkZone = (CheckBox)sender;
@@ -144,6 +169,17 @@ namespace Fiilter
         {
             CheckBox chkZone = (CheckBox)sender;
             SetoresSelecionados.Remove(chkZone.Content.ToString());
+            LostFocus_Filtrar(sender, e);
+        }
+
+        private void btnLimpar_Click(object sender, RoutedEventArgs e)
+        {
+            tbValor.Text = "";
+            tbLiquidez.Text = "";
+            tbDY12Media.Text = "";
+            tbPvpa.Text = "";
+            tbQtdeAtivos.Text = "";
+            tbVacancia.Text = "";
             LostFocus_Filtrar(sender, e);
         }
     }

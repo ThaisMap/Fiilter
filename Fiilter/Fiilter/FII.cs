@@ -15,14 +15,12 @@ namespace Fiilter
         public int Liquidez { get; }
         public decimal Dividendo { get;  }
         public decimal DY { get;  }
-        public decimal DY12Acumulado { get;  }
         public decimal DY12Media { get; }
-        public decimal RentabilidadePeriodo { get; }
         public decimal PVPA { get;  }
-        public decimal RentabilidadePatr { get;  }
+        public decimal RentabilidadeTotal { get;  }
+        public int QtdeAtivos { get; }
         public decimal VacanciaFisica { get; }
         public decimal VacanciaFinanceira { get; }
-        public int QtdeAtivos { get; }
 
 
         public FII(List<string> dadosBrutos)
@@ -33,11 +31,9 @@ namespace Fiilter
             Liquidez = int.Parse(dadosBrutos[3].Replace(".0", ""));
             Dividendo = MoneyParse(dadosBrutos[4]);
             DY = PercentParse(dadosBrutos[5]);
-            DY12Acumulado = PercentParse(dadosBrutos[8]);
             DY12Media = PercentParse(dadosBrutos[11]);
-            RentabilidadePeriodo = PercentParse(dadosBrutos[14]);
             PVPA = PercentParse(dadosBrutos[18]);
-            RentabilidadePatr = PercentParse(dadosBrutos[21]);
+            RentabilidadeTotal = PercentParse(dadosBrutos[21]);
             VacanciaFisica = PercentParse(dadosBrutos[23]);
             VacanciaFinanceira = PercentParse(dadosBrutos[24]);
             QtdeAtivos = int.Parse(dadosBrutos[25].Replace(".0", ""));

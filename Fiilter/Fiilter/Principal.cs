@@ -11,10 +11,14 @@ namespace Fiilter
     class Principal
     {
         public List<FII> FIIs { get; private set; }
+
+        public List<string> ListaNegra { get; set; }
+
         public string[] setores { get; set; }
         public Principal()
         {
             FIIs = new List<FII>();
+            ListaNegra = new List<string>();
             Scrape();
             GetSetores();
         }

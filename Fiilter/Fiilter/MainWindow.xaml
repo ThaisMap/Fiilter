@@ -66,6 +66,21 @@
                 LostFocus="LostFocus_Filtrar"
                 PreviewTextInput="ApenasNumeros"
                 Text="3" />
+            <TextBox
+                x:Name="tbRentabilidade"
+                Width="90"
+                Margin="10"
+                materialDesign:HintAssist.Hint="Rentabilidade minima"
+                materialDesign:HintAssist.IsFloating="True"
+                LostFocus="LostFocus_Filtrar"
+                PreviewTextInput="ApenasNumeros"
+                Text="0" />
+            <Button
+                Name="btnLimpar"
+                Click="btnLimpar_Click"
+                Style="{StaticResource MaterialDesignFlatButton}">
+                <materialDesign:PackIcon Kind="CheckAll" />
+            </Button>
         </StackPanel>
         <ListBox
             x:Name="listSetores"
@@ -87,6 +102,24 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <DataGrid x:Name="dgFIIs" DockPanel.Dock="Top" />
+        <DataGrid
+            x:Name="dgFIIs"
+            AutoGenerateColumns="False"
+            DockPanel.Dock="Top">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Codigo}" Header="Código" />
+                <DataGridTextColumn Binding="{Binding Setor}" Header="Setor" />
+                <DataGridTextColumn Binding="{Binding PrecoAtual, StringFormat={}{0:c}}" Header="Preço" />
+                <DataGridTextColumn Binding="{Binding Liquidez}" Header="Liquidez" />
+                <DataGridTextColumn Binding="{Binding Dividendo, StringFormat={}{0:c}}" Header="Último dividendo" />
+                <DataGridTextColumn Binding="{Binding DY}" Header="Último div yield" />
+                <DataGridTextColumn Binding="{Binding DY12Media}" Header="Média DY 12 meses" />
+                <DataGridTextColumn Binding="{Binding PVPA}" Header="P / VPA" />
+                <DataGridTextColumn Binding="{Binding RentabilidadeTotal}" Header="Rentabilidade Total" />
+                <DataGridTextColumn Binding="{Binding QtdeAtivos}" Header="Quantos Ativos" />
+                <DataGridTextColumn Binding="{Binding VacanciaFisica}" Header="Vacância Física" />
+                <DataGridTextColumn Binding="{Binding VacanciaFinanceira}" Header="Vacância Financeira" />
+            </DataGrid.Columns>
+        </DataGrid>
     </DockPanel>
 </Window>
