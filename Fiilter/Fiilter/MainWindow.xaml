@@ -7,7 +7,7 @@
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="Fiilter"
-    Width="800"
+    Width="900"
     Height="450"
     mc:Ignorable="d">
     <DockPanel>
@@ -20,7 +20,7 @@
                 materialDesign:HintAssist.IsFloating="True"
                 LostFocus="LostFocus_Filtrar"
                 PreviewTextInput="ApenasNumeros"
-                Text="160" />
+                Text="200" />
             <TextBox
                 x:Name="tbLiquidez"
                 Width="90"
@@ -47,7 +47,7 @@
                 materialDesign:HintAssist.IsFloating="True"
                 LostFocus="LostFocus_Filtrar"
                 PreviewTextInput="ApenasNumeros"
-                Text="1,1" />
+                Text="1,3" />
             <TextBox
                 x:Name="tbQtdeAtivos"
                 Width="90"
@@ -105,8 +105,20 @@
         <DataGrid
             x:Name="dgFIIs"
             AutoGenerateColumns="False"
-            DockPanel.Dock="Top">
+            DockPanel.Dock="Top"
+            SelectionMode="Single">
             <DataGrid.Columns>
+                <DataGridTemplateColumn Header="Remover">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button
+                                x:Name="BtnRemover"
+                                Click="BtnRemover_Click">
+                                <materialDesign:PackIcon Kind="TrashCan" />
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
                 <DataGridTextColumn Binding="{Binding Codigo}" Header="Código" />
                 <DataGridTextColumn Binding="{Binding Setor}" Header="Setor" />
                 <DataGridTextColumn Binding="{Binding PrecoAtual, StringFormat={}{0:c}}" Header="Preço" />

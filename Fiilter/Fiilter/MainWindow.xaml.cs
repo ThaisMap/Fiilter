@@ -33,6 +33,7 @@ namespace Fiilter
             dgFIIs.ItemsSource = Source;
             listSetores.ItemsSource = MainOne.setores;
             SetoresSelecionados = MainOne.setores.ToList();
+            LostFocus_Filtrar(new object(), new RoutedEventArgs());
         }
 
         private void LostFocus_Filtrar(object sender, RoutedEventArgs e)
@@ -180,6 +181,14 @@ namespace Fiilter
             tbPvpa.Text = "";
             tbQtdeAtivos.Text = "";
             tbVacancia.Text = "";
+            tbRentabilidade.Text = "";
+            LostFocus_Filtrar(sender, e);
+        }
+
+        private void BtnRemover_Click(object sender, RoutedEventArgs e)
+        {
+            var selecionado = dgFIIs.SelectedItem as FII;
+            MainOne.ListaNegra.Add(selecionado.Codigo);
             LostFocus_Filtrar(sender, e);
         }
     }
