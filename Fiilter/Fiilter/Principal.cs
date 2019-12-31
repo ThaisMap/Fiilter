@@ -20,6 +20,7 @@ namespace Fiilter
             FIIs = new List<FII>();
             ListaNegra = new List<string>();
             Scrape();
+            Cull();
             GetSetores();
         }
 
@@ -65,5 +66,12 @@ namespace Fiilter
                 setores = FIIs.Select(x => x.Setor).Distinct().ToArray();
             }
         }
+  
+        private void Cull()
+        {
+            while (FIIs.Any(x => x.QtdeAtivos == 1))
+                FIIs.Remove(FIIs.First(x => x.QtdeAtivos == 1));
+        }
+
     }
 }
