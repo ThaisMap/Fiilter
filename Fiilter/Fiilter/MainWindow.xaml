@@ -7,11 +7,18 @@
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="Fiilter"
-    Width="900"
+    Width="1086.545"
     Height="450"
     mc:Ignorable="d">
     <DockPanel>
         <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+            <TextBox
+                x:Name="tbNome"
+                Width="90"
+                Margin="10"
+                materialDesign:HintAssist.Hint="Código"
+                materialDesign:HintAssist.IsFloating="True"
+                LostFocus="LostFocus_Filtrar" />
             <TextBox
                 x:Name="tbValor"
                 Width="90"
@@ -31,10 +38,10 @@
                 PreviewTextInput="ApenasNumeros"
                 Text="2000" />
             <TextBox
-                x:Name="tbDY12Media"
+                x:Name="tbDY6Media"
                 Width="90"
                 Margin="10"
-                materialDesign:HintAssist.Hint="DY 12 (med) mínimo"
+                materialDesign:HintAssist.Hint="DY 6 (med) mínimo"
                 materialDesign:HintAssist.IsFloating="True"
                 LostFocus="LostFocus_Filtrar"
                 PreviewTextInput="ApenasNumeros"
@@ -125,6 +132,7 @@
                 <DataGridTextColumn Binding="{Binding Liquidez}" Header="Liquidez" />
                 <DataGridTextColumn Binding="{Binding Dividendo, StringFormat={}{0:c}}" Header="Último dividendo" />
                 <DataGridTextColumn Binding="{Binding DY}" Header="Último div yield" />
+                <DataGridTextColumn Binding="{Binding DY6Media}" Header="Média DY 6 meses" />
                 <DataGridTextColumn Binding="{Binding DY12Media}" Header="Média DY 12 meses" />
                 <DataGridTextColumn Binding="{Binding PVPA}" Header="P / VPA" />
                 <DataGridTextColumn Binding="{Binding RentabilidadeTotal}" Header="Rentabilidade Total" />

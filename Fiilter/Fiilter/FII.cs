@@ -15,6 +15,7 @@ namespace Fiilter
         public int Liquidez { get; }
         public decimal Dividendo { get;  }
         public decimal DY { get;  }
+        public decimal DY6Media { get; }
         public decimal DY12Media { get; }
         public decimal PVPA { get;  }
         public decimal RentabilidadeTotal { get;  }
@@ -31,6 +32,7 @@ namespace Fiilter
             Liquidez = int.Parse(dadosBrutos[3].Replace(".0", ""));
             Dividendo = MoneyParse(dadosBrutos[4]);
             DY = PercentParse(dadosBrutos[5]);
+            DY6Media = PercentParse(dadosBrutos[10]);
             DY12Media = PercentParse(dadosBrutos[11]);
             PVPA = PercentParse(dadosBrutos[18]);
             RentabilidadeTotal = PercentParse(dadosBrutos[21]);

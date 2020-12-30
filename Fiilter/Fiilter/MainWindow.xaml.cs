@@ -56,16 +56,27 @@ namespace Fiilter
         {
             FII fundo = sourceObject as FII;
             return (FiltroSetor(fundo) && 
+                FiltroNome(fundo.Codigo) &&
                 FiltroListaNegra(fundo.Codigo) &&
                 FiltroValor(fundo) && 
                 FiltroLiquidez(fundo) && 
-                FiltroDYMedia12(fundo) && 
+                FiltroDYMedia6(fundo) && 
                 FiltroPVPA(fundo) && 
                 FiltroQtAtivos(fundo) && 
                 FiltroVacancia(fundo) &&
                 FiltroRentabilidade(fundo)
                 );
           
+        }
+
+        private bool FiltroNome(string nomeFundo)
+        {
+            if (tbNome.Text == "")
+                return true;
+
+            string nome = tbNome.Text.ToUpper();
+
+            return nomeFundo.Contains(nome);
         }
 
         private bool FiltroValor(FII fundo)
@@ -90,15 +101,15 @@ namespace Fiilter
             return fundo.Liquidez >= liquidez;
         }
 
-        private bool FiltroDYMedia12(FII fundo)
+        private bool FiltroDYMedia6(FII fundo)
         {
-            if (tbDY12Media.Text == "")
+            if (tbDY6Media.Text == "")
                 return true;
 
-            if (!decimal.TryParse(tbDY12Media.Text, out decimal DYMedia))
+            if (!decimal.TryParse(tbDY6Media.Text, out decimal DYMedia))
                 return false;
 
-            return fundo.DY12Media >= DYMedia;
+            return fundo.DY6Media >= DYMedia;
         }
 
         private bool FiltroPVPA(FII fundo)
@@ -175,9 +186,10 @@ namespace Fiilter
 
         private void btnLimpar_Click(object sender, RoutedEventArgs e)
         {
+            tbNome.Text = "";
             tbValor.Text = "";
             tbLiquidez.Text = "";
-            tbDY12Media.Text = "";
+            tbDY6Media.Text = "";
             tbPvpa.Text = "";
             tbQtdeAtivos.Text = "";
             tbVacancia.Text = "";
